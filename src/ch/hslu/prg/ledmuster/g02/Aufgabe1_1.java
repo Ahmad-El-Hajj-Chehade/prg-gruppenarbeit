@@ -10,48 +10,11 @@ import ch.hslu.prg.ledmuster.g02.exceptions.InputException;
 
 public class Aufgabe1_1 {
 
-	   public static void ledsOnOff(BoardService boardService) {
-	    	int rowAmount = 0;
-	    	int maxRows = BoardService.MAX_ROWS;
-	    	Led[][] leds = null;
-	    	Scanner sc = new Scanner(System.in);
-	    	try {
-	    		System.out.println("Gib die Anzahl Reihen von: 1-" + maxRows + " ein:");
-	    	rowAmount = readRowAmount(sc, maxRows);
-	    	
-	    	}catch(InputException i) {
-	    		System.out.println("Error " + i.getMessage());
-	    		ledsOnOff(boardService);
-	    	}
-	    	leds = addLeds(rowAmount, boardService, leds);
-	    	
-	    	executeLed(leds, boardService);
-	    	boardService.pauseExecution(2000);
-	    	boardService.removeAllLeds();
-	    }
+	
 	    
-	    private static void ledsColoredOnOff(BoardService boardService) {
-	    	int rowAmount = 0;
-	    	int maxRows = BoardService.MAX_ROWS;
-	    	Led[][] leds = null;
-	    	Scanner sc = new Scanner(System.in);
-	    	try {
-	    		System.out.println("Gib die Anzahl Reihen von: 1-" + maxRows + " ein:");
-	    	rowAmount = readRowAmount(sc, maxRows);
-	    	
-	    	}catch(InputException i) {
-	    		System.out.println("Error " + i.getMessage());
-	    		ledsOnOff(boardService);
-	    	}
-	    	leds = addLeds(rowAmount, boardService, leds);
-	    	
-	    	executeLed(leds, boardService);
-	    	boardService.pauseExecution(2000);
-	    	boardService.removeAllLeds();
-	    }
+	 
 	    
-	    
-	    private static int readRowAmount(Scanner sc, int maxRows) throws InputException {
+	    public static int readRowAmount(Scanner sc, int maxRows) throws InputException {
 	    	try {
 	    		int input = sc.nextInt();
 	    		if(input < 1 || input > maxRows) {
@@ -64,17 +27,14 @@ public class Aufgabe1_1 {
 	    	}
 	    }
 	    
-	    private static LedColor readColor(BoardService boardService, Scanner sc) {
-	    	
-	    	return LedColor.RED;
-	    }
-	    private static Led[][] addLeds(int rowAmount, BoardService boardService, Led[][] leds) {
+	    
+	    public static Led[][] addLeds(int rowAmount, BoardService boardService, Led[][] leds) {
 	    	leds = boardService.add(rowAmount);
 	    	boardService.pauseExecution(2000);
 	    	return leds;
 	    }
 	    
-	    private static void executeLed(Led[][] leds, BoardService boardService) {
+	    public static void executeLed(Led[][] leds, BoardService boardService) {
 	    	for(int i = 0; i < 3; i++) {
 	    	//turn on leds
 	    	for(int rows = leds.length -1; rows >= 0; rows--) {

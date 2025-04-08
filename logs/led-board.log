@@ -39,3 +39,38 @@ Caused by: java.nio.channels.ClosedChannelException
 2025-04-07 16:56:06,244 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning off failed (HttpStatus Code: 500)
 2025-04-08 15:20:48,461 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
 2025-04-08 15:22:40,385 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 400)
+2025-04-08 16:21:53,375 ERROR c.h.p.l.p.i.BordProxyImpl [main] HTTP/1.1 header parser received no bytes
+java.io.IOException: HTTP/1.1 header parser received no bytes
+	at jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:966) ~[java.net.http:?]
+	at jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133) ~[java.net.http:?]
+	at ch.hslu.prg.ledboard.proxy.internal.BordProxyImpl.turnLedOff(BordProxyImpl.java:193) [proxy.jar:?]
+	at ch.hslu.prg.ledboard.proxy.Led.turnOff(Led.java:74) [proxy.jar:?]
+	at ch.hslu.prg.ledmuster.g02.Aufgabe1_1.executeLed(Aufgabe1_1.java:90) [bin/:?]
+	at ch.hslu.prg.ledmuster.g02.Aufgabe1_1.ledsOnOff(Aufgabe1_1.java:28) [bin/:?]
+	at ch.hslu.prg.ledmuster.g02.ClientApp.main(ClientApp.java:29) [bin/:?]
+Caused by: java.io.IOException: HTTP/1.1 header parser received no bytes
+	at jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:388) ~[java.net.http:?]
+	at jdk.internal.net.http.Http1Response$HeadersReader.onReadError(Http1Response.java:590) ~[java.net.http:?]
+	at jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302) ~[java.net.http:?]
+	at jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:182) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207) ~[java.net.http:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.io.EOFException: EOF reached while reading
+	at jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onComplete(Http1AsyncReceiver.java:601) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadSubscription.signalCompletion(SocketTube.java:648) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:853) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280) ~[java.net.http:?]
+	at jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965) ~[java.net.http:?]
+	at jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253) ~[java.net.http:?]
+	at jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469) ~[java.net.http:?]
+	at jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414) ~[java.net.http:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414) ~[java.net.http:?]
