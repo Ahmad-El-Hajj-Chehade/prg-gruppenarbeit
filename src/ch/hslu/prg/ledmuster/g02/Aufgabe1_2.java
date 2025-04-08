@@ -9,7 +9,7 @@ import ch.hslu.prg.ledboard.proxy.LedColor;
 import ch.hslu.prg.ledmuster.g02.exceptions.InputException;
 
 
-public class ColoredLedBoard {
+public class Aufgabe1_2 {
 
     public static void ledsColoredOnOff(BoardService boardService) throws InputException {
         int rowAmount = readRowAmount();

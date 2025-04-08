@@ -13,9 +13,9 @@ public class ClientApp {
     public static void main(String[] args) throws InputException {
     	
         BoardService boardService = new BoardService();
-        // ledsOnOff(boardService);
-        //LedBoard.ledsOnOff(boardService);
-       ColoredLedBoard.ledsColoredOnOff(boardService);
+        
+       Aufgabe1_1.ledsOnOff(boardService);
+       Aufgabe1_2.ledsColoredOnOff(boardService);
     }
 
  
