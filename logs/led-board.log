@@ -37,3 +37,5 @@ Caused by: java.nio.channels.ClosedChannelException
 2025-04-07 16:53:55,623 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
 2025-04-07 16:54:04,854 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
 2025-04-07 16:56:06,244 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning off failed (HttpStatus Code: 500)
+2025-04-08 15:20:48,461 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
+2025-04-08 15:22:40,385 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 400)

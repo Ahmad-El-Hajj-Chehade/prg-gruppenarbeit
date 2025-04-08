@@ -14,7 +14,7 @@ public class ClientApp {
     	
         BoardService boardService = new BoardService();
         // ledsOnOff(boardService);
-      // LedBoard.ledsOnOff(boardService);
+        //LedBoard.ledsOnOff(boardService);
        ColoredLedBoard.ledsColoredOnOff(boardService);
     }
 
