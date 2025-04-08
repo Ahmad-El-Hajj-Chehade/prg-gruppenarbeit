@@ -8,7 +8,7 @@ import ch.hslu.prg.ledboard.proxy.Led;
 import ch.hslu.prg.ledboard.proxy.LedColor;
 import ch.hslu.prg.ledmuster.g02.exceptions.InputException;
 
-public class LedBoard {
+public class Aufgabe1_1 {
 
 	   public static void ledsOnOff(BoardService boardService) {
 	    	int rowAmount = 0;
