@@ -1,0 +1,39 @@
+2025-04-07 16:50:06,521 ERROR c.h.p.l.p.i.BordProxyImpl [main] null
+java.net.ConnectException: null
+	at jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:951) ~[java.net.http:?]
+	at jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133) ~[java.net.http:?]
+	at ch.hslu.prg.ledboard.proxy.internal.BordProxyImpl.turnLedOff(BordProxyImpl.java:193) [proxy.jar:?]
+	at ch.hslu.prg.ledboard.proxy.Led.turnOff(Led.java:74) [proxy.jar:?]
+	at ch.hslu.prg.ledmuster.g02.ClientApp.ledsColoredOnOff(ClientApp.java:127) [bin/:?]
+	at ch.hslu.prg.ledmuster.g02.ClientApp.main(ClientApp.java:14) [bin/:?]
+Caused by: java.net.ConnectException
+	at jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1041) ~[java.net.http:?]
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227) ~[java.net.http:?]
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280) ~[java.net.http:?]
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238) ~[java.net.http:?]
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+Caused by: java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:202) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:786) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:874) ~[?:?]
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210) ~[java.net.http:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:571) ~[?:?]
+	at jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212) ~[java.net.http:?]
+	at jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280) ~[java.net.http:?]
+	at jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238) ~[java.net.http:?]
+	at java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?]
+	at java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?]
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+2025-04-07 16:53:55,623 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
+2025-04-07 16:54:04,854 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning on failed (HttpStatus Code: 500)
+2025-04-07 16:56:06,244 ERROR c.h.p.l.p.i.BordProxyImpl [main] Turning off failed (HttpStatus Code: 500)
