@@ -12,6 +12,17 @@ public class ClientApp {
 	
     public static void main(String[] args) throws InputException {
     	
+    	/*-1
+		// Oeffnen der -jar Datei für Ansicht
+		try {
+			ProcessBuilder pb = new ProcessBuilder("java", "-jar", "gui.jar");
+			pb.start();
+			Thread.sleep(500);
+		} catch (Exception e) {
+			System.out.println(" GUI konnte nicht gestartet werden. " + e.getMessage());
+		}
+    	*/
+    	
         BoardService boardService = new BoardService();
         // ledsOnOff(boardService);
         //LedBoard.ledsOnOff(boardService);
